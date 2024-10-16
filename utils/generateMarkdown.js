@@ -1,10 +1,10 @@
 const fs = require('fs')
 const inquirer = require('inquirer');
-const index = require('./index');
+const index = require('.././index.js');
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-const inquirer = require('inquirer');
+
 function renderLicenseBadge(license) {
   if (license === 'MIT') {
     return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
@@ -29,6 +29,43 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  
+  ## table of content
+  
+  * [Description](#description)
+  * [License](#license)
+  * [Installations](#installations)
+  * [Usage](#usage)
+  * [Tests](#tests)
+  * [Email](#email)
+  * [Github](#github)
+  
+  ## Description
+  ${data.description}
+  
+  
+  
+  ## Installations
+  ${data.installations}
+  
+  ## Usage
+  ${data.usage}
+    
+  ## Contributing
+  ${data.contributing}
+  
+  ## Tests
+  ${data.tests}
+  
+  ## Github
+  ${data.github}
+    
+  ## Email
+  ${data.email}
+    
+  ## License
+  ${renderLicenseBadge(data.license)}
+    
 
 `;
 }
